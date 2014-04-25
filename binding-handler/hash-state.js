@@ -1,8 +1,8 @@
 var ko = require('knockout');
-var hashParser = require('hash-state/lib/hash-parser');
+var HashState = require('hash-state');
 
 module.exports = {
 	update: function(element, valueAccessor, allBindingsAccessor, viewModel) {
-        element.href = hashParser.stringify(ko.toJS(valueAccessor()));
+        element.href = HashState.stringify(ko.toJS(valueAccessor()));
     }
 }
